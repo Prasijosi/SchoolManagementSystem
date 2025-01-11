@@ -1,0 +1,83 @@
+{% extends 'school/studentbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        .alert {
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .alert .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .alert .closebtn:hover {
+            color: black;
+        }
+
+        .w3-panel p {
+            padding-top: 10px;
+        }
+
+        .w3-panel {
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        .w3-panel p {
+            font-weight: bold;
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 768px) {
+            .alert {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .w3-panel {
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<br>
+
+{% include 'school/student_dashboard_cards.html' %}
+
+<br><br>
+<div class="w3-panel w3-black">
+  <p>Notice Board</p>
+</div><br>
+
+{% for n in notice %}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Posted on {{ n.date }} </strong><br><b>By: {{ n.by }}</b><br> {{ n.message }}
+</div>
+{% endfor %}
+
+{% endblock content %}

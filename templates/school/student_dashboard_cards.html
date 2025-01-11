@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        .contact-card {
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .card-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .f-left {
+            margin-right: 15px;
+        }
+
+        .card-block .icon {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .bg-c-blue {
+            background: linear-gradient(45deg, #4099ff, #3b8df0);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg, #2ed8b6, #26c7a0);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg, #FFB64D, #ffa726);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg, #FF5370, #f44336);
+        }
+
+        .container {
+            padding-top: 40px;
+        }
+
+        .column {
+            padding: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12 has-text-centered">
+                <h1 class="title is-2">Contact Us</h1>
+                <p class="subtitle">Get in touch with us for any inquiries or support</p>
+            </div>
+
+            <div class="column is-md-4">
+                <div class="card contact-card bg-c-blue">
+                    <div class="card-header">
+                        <h6>Name</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="f-left">
+                            <i class="fas fa-user-tie icon"></i>
+                        </div>
+                        <p><span>{{request.user.first_name}}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-md-4">
+                <div class="card contact-card bg-c-green">
+                    <div class="card-header">
+                        <h6>Contact</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="f-left">
+                            <i class="fas fa-mobile-alt icon"></i>
+                        </div>
+                        <p><span>{{mobile}}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-md-4">
+                <div class="card contact-card bg-c-yellow">
+                    <div class="card-header">
+                        <h6>Roll</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="f-left">
+                            <i class="fas fa-list-ol icon"></i>
+                        </div>
+                        <p><span>{{roll_no}}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-md-4">
+                <div class="card contact-card bg-c-pink">
+                    <div class="card-header">
+                        <h6>Fee</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="f-left">
+                            <i class="fas fa-dollar-sign icon"></i>
+                        </div>
+                        <p><span>{{fee}}</span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Developed By Prashiddha Joshi</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .navbar {
+            background-color: #4CAF50; /* Fresh green color */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar-item {
+            font-size: 16px;
+            color: white;
+        }
+
+        .navbar-item:hover {
+            background-color: #45a049;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-burger span {
+            background-color: white;
+        }
+
+        .navbar-burger.is-active span {
+            background-color: #ff6347; /* A contrasting color when active */
+        }
+
+        .navbar-menu {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <strong>School Management System</strong>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasic" class="navbar-menu">
+            <div class="navbar-start">
+            </div>
+
+            <div class="navbar-end">
+                <a href="/" class="navbar-item is-active"><i class="fas fa-home"></i> Home</a>
+                <a href="/adminclick" class="navbar-item"><i class="fas fa-cogs"></i> Admin</a>
+                <a href="/teacherclick" class="navbar-item"><i class="fas fa-chalkboard-teacher"></i> Teacher</a>
+                <a href="/studentclick" class="navbar-item"><i class="fas fa-user-graduate"></i> Student</a>
+                <a href="/contactus" class="navbar-item"><i class="fas fa-envelope"></i> Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

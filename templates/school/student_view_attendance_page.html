@@ -1,0 +1,102 @@
+{% extends 'school/studentbase.html' %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .columns {
+            margin-top: 40px;
+        }
+
+        .panel {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel-heading {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .table th, .table td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table-bordered th, .table-bordered td {
+            border: 1px solid #ddd;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media (max-width: 768px) {
+            .columns {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .panel {
+                padding: 10px;
+            }
+
+            .panel-heading {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="panel is-primary">
+            <div class="panel-heading">
+                <h6>Your Attendance for the date: {{date}}</h6>
+            </div>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student Roll</th>
+                        <th>Present/Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attendancedata, studentdata in mylist %}
+                        <tr>
+                            <td>{{ studentdata.get_name }}</td>
+                            <td>{{ studentdata.roll_no }}</td>
+                            <td>{{ attendancedata.present_status }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

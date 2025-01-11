@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Message Sent - School Management System</title>
+
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .message-container {
+            margin: 50px auto;
+            padding: 40px;
+            max-width: 700px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .message-container:hover {
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3273dc;
+            margin-bottom: 20px;
+        }
+
+        p.lead {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 24px;
+            background-color: #3273dc;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #276cda;
+            transform: translateY(-3px);
+        }
+
+        hr {
+            margin: 30px auto;
+            border: 1px solid #e8e8e8;
+            width: 70%;
+        }
+
+        .lead {
+            font-weight: 400;
+        }
+
+        .footer {
+            margin-top: 50px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .message-container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p.lead {
+                font-size: 1rem;
+            }
+
+            .button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include "school/navbar.html" %}
+    
+    <div class="container">
+        <div class="message-container">
+            <h1>Your message was sent successfully!</h1>
+            <p class="lead">Thank you for your feedback. We value your input and will respond to you as soon as possible.</p>
+            <hr>
+            <p class="lead">Feel free to explore other features of our website!</p>
+            <a class="button" href="/" role="button">Go to Home</a>
+        </div>
+    </div>
+    
+    {% include "school/footer.html" %}
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>School Management System - Contact Us</title>
+</head>
+
+<body>
+
+  {% include "school/navbar.html" %}
+  <br><br>
+
+  <div class="container is-fluid">
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered">Contact Us</h1>
+          <p class="subtitle has-text-centered">We'd love to hear from you! Share your thoughts or reach out for assistance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <div class="notification is-light">
+            <h3 class="title is-3">Send Us Valuable Feedback!</h3>
+            <p class="subtitle is-5">Your opinion matters. Help us improve by sharing your feedback.</p>
+          </div>
+
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="field">
+                <label for="id_Name" class="label">Name:</label>
+                <div class="control">
+                  <input type="text" name="Name" maxlength="30" required="" id="id_Name" class="input" placeholder="Your Name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="id_Email" class="label">Email:</label>
+                <div class="control">
+                  <input type="email" name="Email" maxlength="320" required="" id="id_Email" class="input" placeholder="Your Email">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="id_Message" class="label">Message:</label>
+                <div class="control">
+                  <textarea name="Message" cols="30" rows="3" maxlength="500" required="" id="id_Message" class="textarea" placeholder="Your Message"></textarea>
+                </div>
+              </div>
+
+              <br>
+              <div class="control">
+                <input type="submit" value="Send Message" class="button is-primary is-large is-fullwidth">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <h4 class="title is-4">Contact Information</h4>
+          <p>If you have any questions or need immediate assistance, feel free to reach out to us:</p>
+          <ul>
+            <li><strong>Email:</strong> hamroramro@school.com</li>
+            <li><strong>Phone:</strong> +01 6676542</li>
+            <li><strong>Address:</strong> Bajrabarahi, Lalitpur, Nepal</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  {% include "school/footer.html" %}
+</body>
+
+</html>

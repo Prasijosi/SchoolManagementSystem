@@ -1,0 +1,123 @@
+{% extends 'school/adminbase.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        .note {
+            text-align: center;
+            height: 80px;
+            background: linear-gradient(to right, #343a40, #607d8b);
+            color: #fff;
+            font-weight: bold;
+            line-height: 80px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .form-content {
+            padding: 30px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .input {
+            border-radius: 1.5rem;
+            box-shadow: none;
+        }
+
+        .btnSubmit {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 1.5% 2%;
+            width: 100%;
+            cursor: pointer;
+            background: #4caf50;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btnSubmit:hover {
+            background-color: #45a049;
+        }
+
+        .columns {
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .form-content {
+                padding: 20px;
+            }
+
+            .btnSubmit {
+                width: 100%;
+                padding: 10px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="container">
+    <div class="form">
+      <div class="note">
+        <p>Hire New Teacher To School</p>
+      </div>
+
+      <div class="form-content">
+        <div class="columns is-variable is-6">
+          <div class="column is-half">
+            <div class="field">
+              <label class="label">First Name</label>
+              {% render_field form1.first_name class="input" placeholder="First Name" %}
+            </div>
+
+            <div class="field">
+              <label class="label">Username</label>
+              {% render_field form1.username class="input" placeholder="Username" %}
+            </div>
+
+            <div class="field">
+              <label class="label">Contact</label>
+              {% render_field form2.mobile class="input" placeholder="Contact" %}
+            </div>
+          </div>
+
+          <div class="column is-half">
+            <div class="field">
+              <label class="label">Last Name</label>
+              {% render_field form1.last_name class="input" placeholder="Last Name" %}
+            </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              {% render_field form1.password class="input" type="password" placeholder="Password" %}
+            </div>
+
+            <div class="field">
+              <label class="label">Salary</label>
+              {% render_field form2.salary class="input" placeholder="Salary" %}
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btnSubmit">Hire</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

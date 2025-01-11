@@ -1,0 +1,88 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .columns {
+            margin-top: 30px;
+        }
+
+        /* Adding some padding and making the table more responsive */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+
+        .table {
+            width: 100%;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        /* Styling the card header */
+        .card-header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-12">
+
+            <!-- Card structure for table -->
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="panel-title">Teachers Salary</h6>
+                </div>
+
+                <div class="card-content">
+                    <div class="table-container">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Teacher's Name</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for t in teachers %}
+                                    <tr>
+                                        <td>{{ t.get_name }}</td>
+                                        <td>${{ t.salary }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,142 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>School Management System</title>
+
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .order-card {
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bg-c-blue {
+            background: linear-gradient(45deg, #4099ff, #597481);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg, #2ed8b6, #597481);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg, #FFB64D, #597481);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg, #FF5370, #597481);
+        }
+
+        .card .card-block {
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card i {
+            font-size: 3rem;
+            margin-left: 10px;
+        }
+
+        .columns {
+            margin-top: 30px;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card .text-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                <div class="card bg-c-blue order-card">
+                    <div class="card-block">
+                        <a href="/admin-view-student">
+                            <h6>View All Students</h6>
+                        </a>
+                        <div class="text-right">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                <div class="card bg-c-green order-card">
+                    <div class="card-block">
+                        <a href="/admin-add-student">
+                            <h6>Add Student</h6>
+                        </a>
+                        <div class="text-right">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                <div class="card bg-c-yellow order-card">
+                    <div class="card-block">
+                        <a href="/admin-approve-student">
+                            <h6>Approve Student</h6>
+                        </a>
+                        <div class="text-right">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                <div class="card bg-c-pink order-card">
+                    <div class="card-block">
+                        <a href="/admin-view-student-fee">
+                            <h6>View Student Fee</h6>
+                        </a>
+                        <div class="text-right">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

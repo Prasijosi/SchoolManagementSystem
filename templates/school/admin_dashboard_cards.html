@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+
+        .order-card {
+            color: #fff;
+        }
+
+        .bg-c-blue {
+            background: linear-gradient(45deg, #4099ff, #4a5c64);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg, #2ed8b6, #4a5c64);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg, #FFB64D, #4a5c64);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg, #30a33a, #4a5c64);
+        }
+
+        .card {
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+            box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+            border: none;
+            margin-bottom: 20px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card .card-block {
+            padding: 25px;
+        }
+
+        .order-card i {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .card-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .f-left {
+            float: left;
+        }
+
+        .f-right {
+            float: right;
+        }
+
+        .card-body {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .m-t-20 {
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustment for grid layout */
+        .columns.is-multiline {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .column {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-blue order-card">
+                    <div class="card-block">
+                        <div class="card-header">Total Teacher</div>
+                        <div class="card-body">
+                            <i class="fas fa-chalkboard-teacher f-left"></i>
+                            <span>{{teachercount}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-green order-card">
+                    <div class="card-block">
+                        <div class="card-header">Total Student</div>
+                        <div class="card-body">
+                            <i class="fas fa-user-graduate f-left"></i>
+                            <span>{{studentcount}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-yellow order-card">
+                    <div class="card-block">
+                        <div class="card-header">Teacher's Salary</div>
+                        <div class="card-body">
+                            <i class="fas fa-dollar f-left"></i>
+                            <span>{{teachersalary}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-pink order-card">
+                    <div class="card-block">
+                        <div class="card-header">Student Fee</div>
+                        <div class="card-body">
+                            <i class="fas fa-dollar f-left"></i>
+                            <span>{{studentfee}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-blue order-card">
+                    <div class="card-block">
+                        <div class="card-header">Pending Teacher</div>
+                        <div class="card-body">
+                            <i class="fas fa-spinner f-left"></i>
+                            <span>{{pendingteachercount}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-green order-card">
+                    <div class="card-block">
+                        <div class="card-header">Pending Admissions</div>
+                        <div class="card-body">
+                            <i class="fas fa-spinner f-left"></i>
+                            <span>{{pendingstudentcount}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-yellow order-card">
+                    <div class="card-block">
+                        <div class="card-header">Pending Salary</div>
+                        <div class="card-body">
+                            <i class="fas fa-spinner f-left"></i>
+                            <span>{{pendingteachersalary}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-12 is-md-6 is-lg-2">
+                <div class="card bg-c-pink order-card">
+                    <div class="card-block">
+                        <div class="card-header">Pending Dues</div>
+                        <div class="card-body">
+                            <i class="fas fa-spinner f-left"></i>
+                            <span>{{pendingstudentfee}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

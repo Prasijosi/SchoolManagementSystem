@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>School Management System</title>
+
+    <style>
+        .hero.is-light {
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hero .title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #606c76;
+        }
+
+        .notification {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .button.is-danger {
+            margin-top: 20px;
+            font-size: 1.25rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "school/navbar.html" %}
+
+    <section class="hero is-light is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Hello {{ request.user.first_name }}</h1>
+                <p class="subtitle">Your account has not been approved yet!</p>
+                <div class="notification is-info">
+                    Our administrative team will be reviewing your account soon.<br>
+                    Once your account is approved, you will gain access to the system.<br>
+                    <strong>Check back later for updates.</strong>
+                </div>
+                <a class="button is-danger is-large" href="/logout" role="button">Logout</a>
+            </div>
+        </div>
+    </section>
+
+    {% include "school/footer.html" %}
+</body>
+
+</html>

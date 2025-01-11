@@ -1,0 +1,125 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attendance Management</title>
+
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .panel {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel-heading {
+            margin-bottom: 20px;
+        }
+
+        .columns {
+            margin: 50px 0;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 14px;
+            padding: 5px 10px;
+        }
+
+        .actions a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-10">
+            <div class="panel is-primary">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Manage Attendance</h6>
+                </div>
+
+                <table class="table is-striped is-bordered is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Take Attendance</th>
+                            <th>View Attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>One</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'one' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'one' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Two</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'two' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'two' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Three</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'three' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'three' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Four</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'four' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'four' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Five</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'five' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'five' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Six</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'six' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'six' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Seven</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'seven' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'seven' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eight</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'eight' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'eight' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Nine</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'nine' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'nine' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                        <tr>
+                            <td>Ten</td>
+                            <td><a class="button is-primary is-small" href="{% url 'admin-take-attendance' 'ten' %}"><i class="fas fa-plus"></i> Take Attendance</a></td>
+                            <td><a class="button is-danger is-small" href="{% url 'admin-view-attendance' 'ten' %}"><i class="fas fa-eye"></i> View Attendance</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+    

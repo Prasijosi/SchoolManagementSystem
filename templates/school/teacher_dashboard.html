@@ -1,0 +1,110 @@
+{% extends 'school/teacherbase.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  <!-- Importing Bulma CSS Framework for easy styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <style media="screen">
+    /* General container styling for alignment */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    /* Styling for the notice board header */
+    .notice-board-header {
+      background-color: #2d2d2d;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Alert box styling for notices */
+    .alert {
+      background-color: #f44336;
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      position: relative;
+      animation: fade-in 0.5s ease-in-out;
+    }
+
+    /* Close button styling inside the alert box */
+    .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    /* Close button hover effect */
+    .closebtn:hover {
+      color: #ffcccb;
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      .alert {
+        padding: 15px;
+        font-size: 1rem;
+      }
+
+      .notice-board-header {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Animation for alert box */
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Flexbox layout for alerts to ensure spacing between them */
+    .alert-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<div class="container">
+  {% include 'school/teacher_dashboard_cards.html' %}
+
+  <br><br>
+
+  <div class="notice-board-header">
+    <p>Notice Board</p>
+  </div>
+
+  <div class="alert-container">
+    {% for n in notice %}
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Posted on {{ n.date }} </strong><br>
+        <b>By: {{ n.by }}</b><br>
+        <p>{{ n.message }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

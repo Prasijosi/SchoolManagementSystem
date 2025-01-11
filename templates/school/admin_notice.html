@@ -1,0 +1,123 @@
+{% extends 'school/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        .note {
+            text-align: center;
+            padding: 20px;
+            background: -webkit-linear-gradient(left, #3273dc, #4a90e2);
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-content {
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-content:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .textarea {
+            border-radius: 5px;
+            font-size: 1rem;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .btnSubmit {
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btnSubmit:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .columns {
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .column {
+            max-width: 600px;
+        }
+
+        .submit-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <p>Announce Something</p>
+                </div>
+
+                <div class="form-content">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control">
+                                    {% render_field form.message class="textarea" placeholder="Write Your Message Here" %}
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    {% render_field form.by type="hidden" %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-button-container">
+                        <button type="submit" class="btnSubmit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+{% endblock content %}

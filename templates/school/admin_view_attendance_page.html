@@ -1,0 +1,66 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .columns {
+            margin-top: 50px;
+        }
+
+        .panel {
+            margin: 20px;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Attendance of class {{ level }} and date {{ date }}</h6>
+                </div>
+                <div class="panel-block">
+                    <table class="table is-bordered is-striped is-hoverable">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Student Roll</th>
+                                <th>Present/Absent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for attendancedata, studentdata in mylist %}
+                                <tr>
+                                    <td>{{ studentdata.get_name }}</td>
+                                    <td>{{ studentdata.roll_no }}</td>
+                                    <td>{{ attendancedata.present_status }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,93 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+        }
+
+        .columns {
+            margin-top: 50px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        /* Customize buttons for better appearance */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            font-size: 0.875rem;
+        }
+
+        .button .glyphicon {
+            margin-right: 5px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .columns {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-12-tablet is-8-desktop">
+            <div class="box">
+                <h6 class="title is-4 has-text-centered">Teachers</h6>
+                <div class="table-container">
+                    <table class="table is-striped is-bordered is-hoverable" id="dev-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Salary</th>
+                                <th>Joining Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for t in teachers %}
+                                <tr>
+                                    <td>{{ t.get_name }}</td>
+                                    <td>{{ t.mobile }}</td>
+                                    <td>${{ t.salary }}</td>
+                                    <td>{{ t.joindate }}</td>
+                                    <td>
+                                        <a class="button is-small is-info" href="{% url 'update-teacher' t.id %}">
+                                            <span class="glyphicon glyphicon-edit"></span> Edit
+                                        </a>
+                                        <a class="button is-small is-danger" href="{% url 'delete-teacher-from-school' t.id %}">
+                                            <span class="glyphicon glyphicon-trash"></span> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

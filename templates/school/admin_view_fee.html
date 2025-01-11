@@ -1,0 +1,85 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .columns {
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .panel {
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .table th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .table td {
+            background-color: #f9f9f9;
+        }
+
+        .table-bordered {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title">Fee Details for Class {{level}}</h6>
+            </div>
+            <table class="table table-hover table-striped table-bordered" id="dev-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll</th>
+                        <th>Contact</th>
+                        <th>Dues</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in feedetails %}
+                    <tr>
+                        <td>{{ f.get_name }}</td>
+                        <td>{{ f.roll_no }}</td>
+                        <td>{{ f.mobile }}</td>
+                        <td>{{ f.fee }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

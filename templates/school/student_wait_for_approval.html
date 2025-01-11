@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>School Management System</title>
+
+  <style media="screen">
+    /* Custom styles */
+    .jumbotron {
+      background-color: #f8f9fa;
+      padding: 40px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .jumbotron h1 {
+      font-size: 2.5rem;
+      color: #4caf50;
+      text-align: center;
+    }
+
+    .jumbotron p {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0;
+      padding: 15px;
+      background-color: #f44336;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .alert strong {
+      font-weight: bold;
+    }
+
+    .alert p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .button {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      background-color: #e74c3c;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      .jumbotron {
+        padding: 30px;
+      }
+
+      .jumbotron h1 {
+        font-size: 2rem;
+      }
+
+      .jumbotron p {
+        font-size: 1rem;
+      }
+
+      .button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% include "school/navbar.html" %}
+  
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Hello {{request.user.first_name}},</h1>
+      <p class="lead">
+        Your account has not been approved yet! Our administrative team will review it soon. Once approved, you'll be able to access the system and proceed with your admission.
+      </p>
+      <p class="lead">
+        Thank you for signing up. We look forward to seeing you soon.
+      </p>
+      <hr class="my-4">
+      <p>Please check back later for updates.</p>
+      <p class="lead">
+        <a class="button" href="/logout" role="button">Logout</a>
+      </p>
+    </div>
+  </div>
+
+  {% include "school/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>School Management System</title>
+
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .panel {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .panel-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .columns {
+            margin: 50px 0;
+        }
+
+        .actions a {
+            margin-right: 10px;
+        }
+
+        .actions .button {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-10">
+            <div class="panel is-primary">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Students</h6>
+                </div>
+
+                <table class="table is-striped is-bordered is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Contact</th>
+                            <th>Fee</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in students %}
+                        <tr>
+                            <td>{{ s.get_name }}</td>
+                            <td>{{ s.level }}</td>
+                            <td>{{ s.mobile }}</td>
+                            <td>{{ s.fee }}</td>
+                            <td class="actions">
+                                <a class="button is-small is-info" href="{% url 'update-student' s.id %}">
+                                    <span class="glyphicon glyphicon-edit"></span> Edit
+                                </a>
+                                <a class="button is-small is-danger" href="{% url 'delete-student-from-school' s.id %}">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

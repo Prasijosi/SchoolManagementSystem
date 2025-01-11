@@ -1,0 +1,114 @@
+{% extends 'school/teacherbase.html' %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        h6 {
+            text-align: center;
+        }
+
+        .columns {
+            margin: 50px auto;
+            width: 80%;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .panel-heading {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title">Attendance</h6>
+            </div>
+
+            <table class="table is-bordered is-striped is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Class Name</th>
+                        <th>Take Attendance</th>
+                        <th>View Attendance</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>One</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'one'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'one'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Two</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'two'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'two'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Three</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'three'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'three'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Four</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'four'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'four'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Five</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'five'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'five'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Six</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'six'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'six'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Seven</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'seven'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'seven'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Eight</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'eight'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'eight'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nine</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'nine'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'nine'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ten</td>
+                        <td><a class="button is-small is-primary" href="{% url 'teacher-take-attendance' 'ten'  %}"><span class="glyphicon glyphicon-plus"></span> Take</a></td>
+                        <td><a class="button is-small is-danger" href="{% url 'teacher-view-attendance' 'ten'  %}"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
