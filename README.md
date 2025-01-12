@@ -32,4 +32,4 @@ Teachers can register and, once approved, manage attendance for students, publis
 **Admin Panel:**  
 The admin has full control over the system, managing both student and teacher accounts. They can approve or decline registration requests, monitor student attendance, manage fees, and publish notices. The admin also oversees the system’s flow and handles all records.
 
-The system features a user-friendly dashboard with a clean design, utilizing Bootstrap for UI elements and Vanilla CSS. Key functionalities include managing students, teachers, attendance, fees, and notices.
+The system features a user-friendly dashboard with a clean design, utilizing Bulma. Key functionalities include managing students, teachers, attendance, fees, and notices.
